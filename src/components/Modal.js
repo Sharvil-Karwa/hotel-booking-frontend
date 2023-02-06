@@ -1,15 +1,16 @@
 import React from "react";
+import ImageCarousel from "./Carousel";
 
-export default function Modal() {
+export default function Modal({ room }) {
   const [showModal, setShowModal] = React.useState(false);
   return (
     <>
       <button
-        className="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+        className="px-4 py-2 text-sm text-blue-100 bg-blue-500 rounded shadow"
         type="button"
         onClick={() => setShowModal(true)}
       >
-        Open regular modal
+        Read more
       </button>
       {showModal ? (
         <>
@@ -18,8 +19,9 @@ export default function Modal() {
               {/*content*/}
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 {/*header*/}
+                <ImageCarousel room={room} />
                 <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                  <h3 className="text-3xl font-semibold">Modal Title</h3>
+                  <h3 className="text-3xl font-semibold">{room.name}</h3>
                   <button
                     className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
                     onClick={() => setShowModal(false)}
@@ -32,11 +34,7 @@ export default function Modal() {
                 {/*body*/}
                 <div className="relative p-6 flex-auto">
                   <p className="my-4 text-slate-500 text-lg leading-relaxed">
-                    I always felt like I could do anything. That’s the main
-                    thing people are controlled by! Thoughts- their perception
-                    of themselves! They're slowed down by their perception of
-                    themselves. If you're taught you can’t do anything, you
-                    won’t do anything. I was taught I could do everything.
+                    {room.description}
                   </p>
                 </div>
                 {/*footer*/}

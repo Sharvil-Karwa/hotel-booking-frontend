@@ -1,4 +1,5 @@
 import React from "react";
+import Modal from "./Modal";
 
 export default function Room({ room }) {
   return (
@@ -15,9 +16,7 @@ export default function Room({ room }) {
         <p className="mb-2 leading-normal">
           {room.description.substring(0, 100)}...
         </p>
-        <button className="px-4 py-2 text-sm text-blue-100 bg-blue-500 rounded shadow">
-          Read more
-        </button>
+        <Modal room={room} />
       </div>
     </div>
   );
