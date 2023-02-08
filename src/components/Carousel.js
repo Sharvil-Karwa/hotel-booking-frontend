@@ -8,15 +8,12 @@ function ImageCarousel({ room }) {
     <Carousel>
       <div>
         <img src={room.imageurls[0]} />
-        <p className="legend">Legend 1</p>
       </div>
       <div>
         <img src={room.imageurls[1]} />
-        <p className="legend">Legend 2</p>
       </div>
       <div>
         <img src={room.imageurls[2]} />
-        <p className="legend">Legend 3</p>
       </div>
     </Carousel>
   );
